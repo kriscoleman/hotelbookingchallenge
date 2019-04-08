@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace Api
 {
+    // todo: logging
     public class Program
     {
         public static IWebHostBuilder CreateWebHostBuilder(string[] args)

@@ -7,6 +7,9 @@ using Swashbuckle.AspNetCore.Swagger;
 
 namespace Api
 {
+    // todo: logging
+    // todo: identity
+    // todo: auth
     public class Startup
     {
         public Startup(IConfiguration configuration)

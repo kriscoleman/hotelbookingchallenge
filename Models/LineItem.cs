@@ -6,6 +6,11 @@
         public string Name { get; set; }
         public int Quantity { get; set; }
 
+        /// <summary>
+        /// Overriding equals to help our tests.
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (!(obj is LineItem lineItem)) return false;

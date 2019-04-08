@@ -13,6 +13,11 @@ namespace Models
 
         public List<LineItem> LineItems { get; set; } = new List<LineItem>();
 
+        /// <summary>
+        /// Overriding equals to help our tests
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (!(obj is BookingResponse response)) return false;
