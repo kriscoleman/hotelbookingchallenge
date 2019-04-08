@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Api;
 using Autofac.Extensions.DependencyInjection;
@@ -37,9 +38,9 @@ namespace Tests
                 NumberOfBeds = 1,
                 StartDate = DateTime.UtcNow,
                 EndDate = DateTime.UtcNow.AddDays(1), 
-            })));
+            }), Encoding.UTF8, "application/json"));
 
-            Assert.That(response.StatusCode == HttpStatusCode.OK);
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
 
             var resultJson = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<BookingResponse>(resultJson); 
@@ -56,14 +57,14 @@ namespace Tests
                 Pets = 99,
                 StartDate = DateTime.UtcNow,
                 EndDate = DateTime.UtcNow.AddDays(1), 
-            })));
+            }), Encoding.UTF8, "application/json"));
 
             Assert.That(response.StatusCode == HttpStatusCode.OK);
 
             var resultJson = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<BookingResponse>(resultJson); 
             Assert.That(result.IsError, Is.True);
-            Assert.That(result.FriendlyErrorMessage, Is.EqualTo("Can not book more than 2 pets per room."));
+            Assert.That(result.FriendlyErrorMessage, Is.EqualTo("Cannot book more than 2 pets per room."));
         }
 
         [Test]
@@ -72,9 +73,9 @@ namespace Tests
             var response = await _apiClient.PostAsync("api/book", new StringContent(JsonConvert.SerializeObject(new Booking
             {
                 Floor = -1
-            })));
+            }), Encoding.UTF8, "application/json"));
 
-            Assert.That(response.StatusCode == HttpStatusCode.BadRequest);
+            Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.BadRequest));
         }
     }
 }

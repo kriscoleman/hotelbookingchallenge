@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Logic;
 
 namespace Api
 {
@@ -8,7 +9,7 @@ namespace Api
         {
             base.Load(builder);
 
-            // builder.RegisterType<HotelBookingLogic>().As<IHotelBookingLogic>();
+            builder.RegisterType<MotelBookingLogic>().As<IMotelBookingLogic>();
         }
     }
 }

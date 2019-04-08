@@ -3,8 +3,9 @@ using Models;
 
 namespace Logic
 {
-    public interface IHotelBookingLogic {
+    public interface IMotelBookingLogic {
         Task<BookingResponse> BookAsync(Booking booking);
         Task<decimal> GetPetSurchargeAsync();
+        Task<bool> BookingIsValidAsync(Booking booking);
     }
 }

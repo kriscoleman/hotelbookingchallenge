@@ -7,7 +7,7 @@ namespace Tests
 { 
     public class BookingLogicTestsBase
     {
-        protected IHotelBookingLogic _bookingLogic;
+        protected IMotelBookingLogic _bookingLogic;
 
         [SetUp]
         public void Setup()
@@ -16,7 +16,7 @@ namespace Tests
             builder.RegisterModule(new ApiModule());
             var container = builder.Build();
 
-            _bookingLogic = container.Resolve<IHotelBookingLogic>();
+            _bookingLogic = container.Resolve<IMotelBookingLogic>();
         }
     }
 }
