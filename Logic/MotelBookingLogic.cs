@@ -12,6 +12,7 @@ namespace Logic
     /// todo: motel configuration
     /// todo: room availability
     /// todo: concurrent bookings (bookingResponses should reserve room for 5 minutes before placing order to finalize)
+    /// todo: errors should probably be returned as a aggregate
     /// </summary>
     public class MotelBookingLogic : IMotelBookingLogic
     {
