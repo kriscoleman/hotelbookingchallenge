@@ -78,7 +78,7 @@ You may completely ignore the database and the UI for this exercise.
 ## Expectations:
 The purpose of this exercise is get a glimpse of how you think about a problem, what design
 tradeoffs you consider, and how you translate that design into code. After submitting the
-exercise to code@bravoLT.com, it will be reviewed by Bravo LT engineers.
+exercise, it will be reviewed by engineers.
 There is no set deadline for this exercise, but for the sake of your own time please limit yourself
 to a few hours.
 You will not be disqualified if your implementation is incomplete or contains flaws. If that is the
